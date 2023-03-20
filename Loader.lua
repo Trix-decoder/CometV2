@@ -9,7 +9,7 @@ if placeid == 6872274481 or placeid == 8560631822 or placeid == 8444591321 then
     if betterisfile("CometV2/Modules/Bedwars.lua") then
         loadstring(readfile("CometV2/Modules/Bedwars.lua"))()
     else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoBedwarsHacker/CometV2/main/Modules/Bedwars.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YoZxno/CometV2/main/Modules/Bedwars.lua"))()
     end
 elseif placeid == 6872265039 then
     if betterisfile("CometV2/Modules/6872265039.lua") then
