@@ -26,7 +26,7 @@ else
 end
 
 task.delay(1, function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoBedwarsHacker/CometWL/main/Loader.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Trix-decoder/CometWL/main/Tags.lua"))()
     game:GetService("StarterGui"):SetCore("ChatWindowPosition", UDim2.new(0,0,0.73,0))
     game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
         Text = "Comet V2 Loaded!",
