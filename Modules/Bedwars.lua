@@ -321,7 +321,8 @@ runFunction(function()
         local HitFix = Tabs["Combat"]:CreateToggle({
 		["Name"] = "HitFix",
 		["Callback"] = function(callback)
-			if callback then
+			Enabled = callback
+                        if Enabled then 
 				debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 27, "raycast")
 				debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, bedwars.QueryUtil)
 			else
