@@ -1571,47 +1571,6 @@ runcode(function()
 end)
 
 runcode(function()
-    function HasTNT()
-        if IsAlive(lplr) and lplr.Character:FindFirstChild("InventoryFolder").Value:FindFirstChild("tnt") then
-            return true
-        end
-        return false
-    end
-    function getpos()
-        local x = math.round(lplr.Character.PrimaryPart.Position.X/3)
-        local y = math.round(lplr.Character.PrimaryPart.Position.Y/3)
-        local z = math.round(lplr.Character.PrimaryPart.Position.Z/3)
-        return Vector3.new(x,y,z)
-    end
-    local velo
-    local Enabled = false
-    local TNTFly = Tabs["Blatant"]:CreateToggle({
-        ["Name"] = "TNTFly",
-        ["Callback"] = function(Callback)
-            Enabled = Callback
-            if Enabled then
-                velo = Instance.new("BodyVelocity")
-                velo.MaxForce = Vector3.new(9e9,9e9,9e9)
-                velo.Velocity = Vector3.new(0,0.5,0)
-                velo.Parent = lplr.Character:FindFirstChild("HumanoidRootPart")
-                if not HasTNT() then
-                    lib["ToggleFuncs"]["TNTFly"](true)
-                    task.delay(0.1, function() CreateNotification("TNTFly","You need to be Alive and have TNT to use this",5) end)
-                end
-                game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.PlaceBlock:InvokeServer({
-                    ["position"] = getpos(),
-                    ["blockType"] = "tnt"
-                })
-                task.wait(3)
-                velo.Velocity = lplr.Character:FindFirstChild("HumanoidRootPart").CFrame.LookVector * 64
-            else
-                velo:Destroy()
-            end
-        end
-    })
-end)
-
-runcode(function()
     local connections = {}
     local objects = {}
     local newcon
