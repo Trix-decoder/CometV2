@@ -784,6 +784,21 @@ runcode(function()
     })
 end)
 
+runFunction(function()
+	local confetti = Tabs["Exploits"]:CreateToggle({
+              ["Name"] = "Annoyer",
+              ["Callback"] = function(callback)
+                 Enabled = callback
+                 task.spawn(function()
+					repeat 
+						task.wait(0.3) 
+						game:GetService("ReplicatedStorage"):WaitForChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events"):WaitForChild("useAbility"):FireServer("PARTY_POPPER")
+					until (not confetti.Enabled)
+				end)
+			end
+                    end
+end)
+
 runcode(function()
     local Connection
     local Enabled = false
