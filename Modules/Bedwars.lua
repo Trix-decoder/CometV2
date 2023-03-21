@@ -287,6 +287,23 @@ runcode(function()
     })
 end)
 
+runFunction(function()
+	local Enabled = false
+        local HitFix = Tabs["Combat"]:CreateToggle({
+		["Name"] = "HitFix",
+		["Callback"] = function(callback)
+			Enabled = callback
+                        if Enabled then 
+				debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 27, "raycast")
+				debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, bedwars.QueryUtil)
+			else
+				debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 27, "Raycast")
+				debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, workspace)
+			end
+		end,
+	})
+end)
+
 runcode(function()
     local Connection
     local Enabled = false
@@ -314,23 +331,6 @@ runcode(function()
             end
         end
     })
-end)
-
-runFunction(function()
-	local Enabled = false
-        local HitFix = Tabs["Combat"]:CreateToggle({
-		["Name"] = "HitFix",
-		["Callback"] = function(callback)
-			Enabled = callback
-                        if Enabled then 
-				debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 27, "raycast")
-				debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, bedwars.QueryUtil)
-			else
-				debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 27, "Raycast")
-				debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, workspace)
-			end
-		end,
-	})
 end)
 
 runcode(function()
